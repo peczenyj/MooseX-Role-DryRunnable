@@ -4,6 +4,8 @@ package MooseX::Role::DryRunnable::Attribute;
 use Moose::Util;
 use Attribute::Handlers;
 
+our $VERSION = '0.001';
+
 sub UNIVERSAL::dry_it :ATTR(CODE) { 
   my $package = shift;
   my $glob    = shift;
