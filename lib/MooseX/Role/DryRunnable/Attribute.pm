@@ -13,7 +13,7 @@ sub UNIVERSAL::dry_it :ATTR(CODE) {
       my $code   = shift;
       my $target = shift;
 
-      die "Should be MooseX::Role::DryRunnable" 
+      die "Should be MooseX::Role::DryRunnable\n" 
         unless $target->DOES('MooseX::Role::DryRunnable');
 
       $target->is_dry_run() 
