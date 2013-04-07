@@ -4,6 +4,8 @@ package MooseX::Role::DryRunnable::Base;
 
 use Moose::Role;
 
+our $VERSION = '0.001';
+
 requires 'is_dry_run';
 requires 'on_dry_run';  
 
