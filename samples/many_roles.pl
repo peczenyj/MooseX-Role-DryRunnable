@@ -46,4 +46,4 @@ __END__
   bash$ perl samples/many_roles.pl 
   Foo::bar 1 2 3
   bash$ DRY_RUN=1 perl samples/many_roles.pl 
-  logger: bar 1 2 3
+  [DRY RUN] logger: bar(1,2,3)
