@@ -38,7 +38,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Role::DryRunnable - role for add a dry_run option into your Moose Class
+MooseX::Role::DryRunnable - role for add a dry_run (or dryrun) option into your Moose Class
 
 =head1 SYNOPSIS
 
@@ -57,7 +57,7 @@ MooseX::Role::DryRunnable - role for add a dry_run option into your Moose Class
   }
 
   sub is_dry_run { # required !
-    shift->dry_run
+    $ENV{'DRY_RUN'} || shift->dry_run
   }
 
   sub on_dry_run { # required !
