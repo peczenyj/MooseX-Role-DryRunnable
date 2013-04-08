@@ -95,8 +95,8 @@ subtest "should call on_dry_run and pass the correct set of parameters" => sub {
   }
 };
 
-subtest "should call in_dry_run and pass the name of the method" => sub {
-  plan tests => 2;
+subtest "should call in_dry_run and pass the name of the method and the argument list" => sub {
+  plan tests => 4;
   
   {
     package Foo4;
@@ -114,6 +114,8 @@ subtest "should call in_dry_run and pass the name of the method" => sub {
       my $method = shift;
       Test::More::isa_ok($self,'Foo4');
       Test::More::is($method, 'bar');
+      Test::More::is(scalar(@_),1);
+      Test::More::is($_[0],123);      
       1
     }
 

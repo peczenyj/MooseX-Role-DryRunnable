@@ -25,7 +25,7 @@ role {
       my $code = shift;
       my $self = shift;
 
-      $self->is_dry_run($method_name) 
+      $self->is_dry_run($method_name,@_) 
         ? $self->on_dry_run($method_name,@_) 
         : $self->$code(@_)  
     }
@@ -72,13 +72,13 @@ This module is a L<Moose> Role who require two methods, `is_dry_run` and `on_dry
 
 =head1 REQUIRES
 
-=head2 is_dry_run (self, method_name)
+=head2 is_dry_run (self, method_name, argument_list)
 
-This method will receive the name of the method, must return a boolean value. If true, we will execute the alternate code described in `on_dry_run`. You must implement!
+This method will receive the name of the method and the argument list from the original method. Must return a boolean value. If true, we will execute the alternate code described in `on_dry_run`. You must implement!
 
 =head2 on_dry_run (self, method_name, argument_list)
 
-This method will receive the method name and all of the parameters form the original method. You must implement!
+This method will receive the name of the method and the argument list from the original method. You must implement!
 
 =head1 ROLE PARAMETERS 
 
